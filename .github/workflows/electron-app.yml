@@ -37,10 +37,11 @@ jobs:
         run: npm install
 
       # Build the app
-      - name: Build Electron App
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: npm run build
+      - name: Build and Package Electron App
+  run: npm run dist
+  env:
+    GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
 
       # Package the app with Electron Builder
       - name: Package App
