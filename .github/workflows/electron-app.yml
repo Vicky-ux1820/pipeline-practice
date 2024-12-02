@@ -62,30 +62,6 @@ jobs:
         with:
           name: electron-app
           path: dist/
-
-
-         
-      # Step 2: Post a Welcome Message
-      - name: Post Welcome Message
-        uses: actions/github-script@v6
-        with:
-          script: |
-            const branchName = context.ref.replace('refs/heads/', '');
-            const repoOwner = context.repository.owner.login;
-            const repoName = context.repository.name;
-            const message = `
-            🎉 **Welcome to the new branch: ${branchName}!**  
-            Thank you for your contributions! Let's make this branch amazing. 🚀
-            `;
-
-            // Post a comment in the repository issues or discussions
-            await github.issues.create({
-              owner: repoOwner,
-              repo: repoName,
-              title: `Welcome to branch ${branchName}!`,
-              body: message,
-            });
-
             
   deploy:
     runs-on: ubuntu-latest
