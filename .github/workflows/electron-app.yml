@@ -1,6 +1,8 @@
 name: CI/CD for Electron App  
 
 on:
+  create:
+    ref_type: branch
   push:
     branches:
       - main
