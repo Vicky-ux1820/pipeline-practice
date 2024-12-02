@@ -63,7 +63,7 @@ jobs:
           name: electron-app
           path: dist/
 
-  create-pull-request:
+   create-pull-request:
      runs-on: ubuntu-latest
         steps:
       - name: Check out repository code
