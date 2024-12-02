@@ -47,9 +47,9 @@ jobs:
 
       # Package the app with Electron Builder
       - name: Package App
-        run: npm run dist
           env:
             GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          run: npm run dist
 
       # Upload packaged artifacts (optional)
       - name: Upload Packaged App
