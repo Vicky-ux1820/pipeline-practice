@@ -49,7 +49,7 @@ jobs:
       - name: Package App
         run: npm run dist
           env:
-    GH_TOKEN: ${{ secrets.GH_TOKEN }}
+            GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       # Upload packaged artifacts (optional)
       - name: Upload Packaged App
