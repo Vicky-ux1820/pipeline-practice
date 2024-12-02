@@ -38,6 +38,8 @@ jobs:
 
       # Build the app
       - name: Build Electron App
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npm run build
 
       # Package the app with Electron Builder
