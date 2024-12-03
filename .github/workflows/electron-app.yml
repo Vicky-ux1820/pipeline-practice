@@ -14,6 +14,13 @@ permissions:
   contents: write
 
 jobs:
+  test:
+        # Call reusable test workflow
+        uses: Vicky-ux1820/pipeline-practice/.github/workflows/test-workflow.yml@main
+        with:
+          node-version: "16"
+
+          
   build:
     runs-on: ubuntu-latest
 
@@ -40,12 +47,6 @@ jobs:
       # Install dependencies
       - name: Install Dependencies
         run: npm install
-      
-      # Call reusable test workflow
-      - name: Run Tests
-        uses: Vicky-ux1820/pipeline-practice/.github/workflows/test-workflow.yml@main
-        with:
-          node-version: "16"
 
       # Build the app
       - name: Build Electron App
