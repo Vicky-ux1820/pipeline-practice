@@ -14,6 +14,11 @@
     "electron-builder": "^24.6.0",
     "jest": "^29.7.0"
   },
+  "publish": {
+    "provider": "github",
+    "owner": "Vicky-ux1820",  
+    "repo": "pipelining-practice"       
+  },
   "build": {
     "appId": "com.example.myapp",
     "productName": "MyElectronApp",
