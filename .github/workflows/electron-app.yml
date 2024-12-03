@@ -43,7 +43,7 @@ jobs:
       
       # Call reusable test workflow
       - name: Run Tests
-        uses: ./.github/workflows/test-workflow.yml
+        uses: Vicky-ux1820/pipelining-practice/.github/workflows/test-workflow.yml
         with:
           node-version: "16"
 
