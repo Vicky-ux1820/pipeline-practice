@@ -16,18 +16,18 @@ permissions:
 jobs:
   test:
     # Call reusable test workflow
-    uses: ./github/workflows/test-workflow.yml@main
+    uses: Vicky-ux1820/pipelining-practice/test-workflow.yml@main
     with:
       node-version: "16"
 
   build:
     needs: test  # This ensures the test job must pass before build runs
-    uses: ./github/workflows/build-workflow.yml@main
+    uses: .Vicky-ux1820/pipelining-practice/build-workflow.yml@main
     with:
       node-version: "16"
 
   deploy:
     needs: build
-    uses: ./github/workflows/deploy-workflow.yml@main
+    uses: Vicky-ux1820/pipelining-practice/deploy-workflow.yml@main
     with:
       tag: v${{ github.run_number }}
