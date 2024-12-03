@@ -17,7 +17,7 @@ jobs:
   # Call reusable test workflow
   test:
     name: Run Tests
-    uses: /.github/workflows/test-workflow.yml
+    uses: /.github/workflows/test-workflow.yml@main
     with:
       node-version: "16"
 
