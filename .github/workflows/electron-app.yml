@@ -40,12 +40,10 @@ jobs:
       # Install dependencies
       - name: Install Dependencies
         run: npm install
-      
-      # Call reusable test workflow
+
+        # Step 5: Run tests
       - name: Run Tests
-        uses: ./test-workflow.yml
-        with:
-          node-version: "16"
+        run: npm test
 
       # Build the app
       - name: Build Electron App
