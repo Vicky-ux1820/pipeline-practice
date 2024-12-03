@@ -16,7 +16,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    needs: test
     steps:
       # Checkout the repository
       - name: Checkout Code
@@ -43,7 +43,7 @@ jobs:
       
       # Call reusable test workflow
       - name: Run Tests
-        uses: Vicky-ux1820/pipelining-practice/.github/workflows/test-workflow.yml
+        uses: Vicky-ux1820/pipelining-practice/.github/workflows/test-workflow.yml@main
         with:
           node-version: "16"
 
@@ -68,6 +68,7 @@ jobs:
 
   create-pull-request:
     runs-on: ubuntu-latest
+    needs: test
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
