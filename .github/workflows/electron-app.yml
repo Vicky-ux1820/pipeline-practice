@@ -21,12 +21,13 @@ jobs:
       node-version: "16"
 
   build:
-    uses: ./.github/workflows/build-workflow.yml
+    needs: test  # This ensures the test job must pass before build runs
+    uses: Vicky-ux1820/pipeline-practice/.github/workflows/build-workflow.yml
     with:
       node-version: "16"
 
   deploy:
     needs: build
-    uses: ./.github/workflows/deploy-workflow.yml
+    uses: Vicky-ux1820/pipeline-practice/.github/workflows/deploy-workflow.yml
     with:
       tag: v${{ github.run_number }}
